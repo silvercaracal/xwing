@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+//tie fighter sounds
+var tie_explode = new Audio(); //new audio object instance
+tie_explode.src = "sounds/tie_explode.mp3"; //path for sound file
+var tie_fire1 = new Audio();
+tie_fire1.src = "sounds/tie_fire1.mp3"; 
+var tie_fire2 = new Audio(); 
+tie_fire2.src = "sounds/tie_fire2.mp3";
+var tie_fire3 = new Audio(); 
+tie_fire3.src = "sounds/tie_fire3.mp3"; 
+var tie_fire4 = new Audio(); 
+tie_fire4.src = "sounds/tie_fire4.m]3";
+var tie_flyby1 = new Audio(); 
+tie_flyby1.src = "sounds/tie_flyby1.mp3";
+var tie_flyby2 = new Audio(); 
+tie_flyby2.src = "sounds/tie_flyby2.mp3";
+var tie_flyby3 = new Audio(); 
+tie_flyby3.src = "sounds/tie_flyby3.mp3";
+var tie_flyby4 = new Audio(); 
+tie_flyby4.src = "sounds/tie_flyby4.mp3";
+var tie_flyby5 = new Audio(); 
+tie_flyby5.src = "sounds/tie_flyby5.mp3";
+var tie_flyby6 = new Audio(); 
+tie_flyby6.src = "sounds/tie_flyby6.mp3";
+
+//x-wing sounds
+var xwing_explode = new Audio(); 
+xwing_explode.src = "sounds/xwing_explode.mp3";
+var xwing_fire1 = new Audio(); 
+xwing_fire1.src = "sounds/xwing_fire1.mp3"; 
+var xwing_fire2 = new Audio(); 
+xwing_fire2.src = "sounds/xwing_fire2.mp3"; 
+var xwing_fire3 = new Audio(); 
+xwing_fire3.src = "sounds/xwing_fire3.mp3";
+var xwing_flyby1 = new Audio(); 
+xwing_flyby1.src = "sounds/xwing_flyby1.mp3";
+var xwing_flyby2 = new Audio(); 
+xwing_flyby2.src = "sounds/xwing_flyby2.mp3";
+var xwing_flyby3 = new Audio(); 
+xwing_flyby3.src = "sounds/xwing_flyby3.mp3";
+var xwing_flyby4 = new Audio(); 
+xwing_flyby4.src = "sounds/xwing_flyby4.mp3";
+var xwing_flyby5 = new Audio(); 
+xwing_flyby5.src = "sounds/xwing_flyby5.mp3";
+var xwing_flyby6 = new Audio(); 
+xwing_flyby6.src = "sounds/xwing_flyby6.mp3";
+
+function randomtiefire() {
+	var tie_fire_random = parseInt(Math.random() * 4) + 1;
+	if (tie_fire_random == 1) {
+		tie_fire1.play()
+	} else if (tie_fire_random == 2) {
+		tie_fire2.play()
+	} else if (tie_fire_random == 3) {
+		tie_fire3.play()
+	} else if (tie_fire_random == 4)  {
+		tie_fire4.play()
+	}
+}
+function randomxwingfire() {
+	var xwing_fire_random = parseInt(Math.random() * 3) + 1;
+	if (xwing_fire_random == 1) {
+		xwing_fire1.play()
+	} else if (xwing_fire_random == 2) {
+		xwing_fire2.play()
+	} else if (xwing_fire_random == 3) {
+		xwing_fire3.play()
+	}
+}
+function randomtieflyby() {
+	var tie_flyby_random = parseInt(Math.random() * 6) + 1;
+	if (tie_flyby_random == 1) {
+		tie_flyby1.play()
+	} else if (tie_flyby_random == 2) {
+		tie_flyby2.play()
+	} else if (tie_flyby_random == 3) {
+		tie_flyby3.play()
+	} else if (tie_flyby_random == 4) {
+		tie_flyby4.play()
+	} else if (tie_flyby_random == 5) {
+		tie_flyby5.play()
+	} else if (tie_flyby_random == 6) {
+		tie_flyby6.play()
+	}
+}
+function randomxwingflyby() {
+	var xwing_flyby_random = parseInt(Math.random() * 6) + 1;
+	if (xwing_flyby_random == 1) {
+		xwing_flyby1.play()
+	} else if (xwing_flyby_random == 2) {
+		xwing_flyby2.play()
+	} else if (xwing_flyby_random == 3) {
+		xwing_flyby3.play()
+	} else if (xwing_flyby_random == 4) {
+		xwing_flyby4.play()
+	} else if (xwing_flyby_random == 5) {
+		xwing_flyby5.play()
+	} else if (xwing_flyby_random == 6) {
+		xwing_flyby6.play()
+	}
+}
+</script>
+</head>
+<body>
+		<nav>
+				<a href="#" onmousedown="tie_explode.currentTime = 0;tie_explode.play()"><img src="images/tie_explode.jpg" width=100></a>
+				<a href="#" onmousedown="xwing_explode.currentTime = 0; xwing_explode.play()"><img src="images/xwing_explode.jpg" width=100></a>
+				<a href="#" onmousedown="randomtiefire()"><img src="images/tie_fire.jpg" width=100></a>
+				<a href="#" onmousedown="randomxwingfire()"><img src="images/xwing_fire.png" width=100></a>
+				<a href="#" onmousedown="randomtieflyby()"><img src="images/tie_flyby.jpg" width=100></a>
+				<a href="#" onmousedown="randomxwingflyby()">X-wing flyby</a>
+		</nav>
+</body>
+</html>

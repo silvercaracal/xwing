@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	var ships = {
+		'tie' : {
+			'explode' : 1,
+			'fire'    : 4,
+			'flyby'   : 6
+		},
+		'xwing' : {
+			'explode' 		: 1,
+			'fire'   		: 3,
+			'flyby'   		: 6,
+			'protontorpedo'	: 1,
+		},
+	};
+
+	function initializeSounds()
+	{
+		for (var ship in ships){
+			for (var sound in ships[ship]) {
+				var count = ships[ship][sound];
+				if (count == 1) {
+					ships[ship][sound] = new Audio();
+					ships[ship][sound].src = 'sounds/' + ship + '/' + sound + '.mp3';
+				} else {
+					var subSounds = [];
+					for (var x = 1; x <= count; x++) {
+						var subSound = new Audio();
+						subSound.src = 'sounds/' +  ship + '/' + sound + '_' + x + '.mp3'; 
+						subSounds.push(subSound);
+					}
+					ships[ship][sound] = subSounds;
+				}
+			}
+		}
+	}
+
+	function playSound(ship, sound)
+	{
+		var subSounds = ships[ship][sound];
+		if (Array.isArray(subSounds)) {
+			var x = parseInt(Math.random() * subSounds.length);
+			var subSound = subSounds[x];
+
+		} else {
+			var subSound = subSounds;
+		}
+		subSound.currentTime = 0;
+		subSound.play();
+	}
+
+	initializeSounds();
+</script>
+</head>
+<body>
+		<nav>
+				<a href="#" onmousedown="playSound('tie', 'explode');"><img src="images/tie_explode_200.jpg"></a>
+				<a href="#" onmousedown="playSound('tie', 'fire');"><img src="images/tie_fire_200.jpg"></a>
+				<a href="#" onmousedown="playSound('tie', 'flyby');"><img src="images/tie_flyby_200.jpg"></a>
+				<br/>
+				<a href="#" onmousedown="playSound('xwing', 'explode');"><img src="images/xwing_explode_200.jpg"></a>
+				<a href="#" onmousedown="playSound('xwing', 'fire');"><img src="images/xwing_fire_200.png"></a>
+				<a href="#" onmousedown="playSound('xwing', 'flyby');"><img src="images/xwing_flyby_200.jpg"></a>
+				<a href="#" onmousedown="playSound('xwing', 'protontorpedo');"><img src="images/xwing_protontorpedoes_200.jpg"></a>
+		</nav>
+</body>
+</html>
